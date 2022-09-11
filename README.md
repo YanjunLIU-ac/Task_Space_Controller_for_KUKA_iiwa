@@ -9,12 +9,16 @@ Example task-space controllers for KUKA LBR iiwa14 robot, including PD controlle
 
 ## Results
 1. Setpoint PD controller (without pose control)
-
+![](./examples/taskSpace_setpointControl.gif)
+![](./examples/taskSpace_setpointControl.png)
 2. Feedforward controller for trajectory tracking (with pose control)
-
+![](./examples/taskSpace_trajff_6dof.gif)
+![](./examples/taskSpace_trajff_6dof.png)
 3. Adaptive neural-network controller for trajectory tracking (without pose control)
 
-4. Nullspace impedance controller (with pose control)
+4. Nullspace impedance controller (with static end-effector position)
+![](./examples/nullSpace_impedance.gif)
+![](./examples/nullSpace_impedance.png)
 
 ## References
 1. Slotine, Jean-Jacques E., and Weiping Li. Applied nonlinear control. Vol. 199. No. 1. Englewood Cliffs, NJ: Prentice hall, 1991.
