@@ -10,20 +10,12 @@ Example task-space controllers for KUKA LBR iiwa14 robot, including PD controlle
 ## Results
 1. Setpoint PD controller (without pose control)
 <div align="center">
-<<<<<<< HEAD
-  <img src="./examples/taskSpace_setpointControl.gif" height=200><img src="./examples/taskSpace_setpointControl.png" height=200>
-=======
   <img src="./examples/taskSpace_setpointControl.gif" height=300><img src="./examples/taskSpace_setpointControl.png" height=300>
->>>>>>> e538378 (add neural net controller)
 </div>
 
 2. Feedforward controller for trajectory tracking (with pose control)
 <div align="center">
-<<<<<<< HEAD
-  <img src="./examples/taskSpace_trajff_6dof.gif" height=200><img src="./examples/taskSpace_trajff_6dof.png" height=200>
-=======
   <img src="./examples/taskSpace_trajff_6dof.gif" height=300><img src="./examples/taskSpace_trajff_6dof.png" height=300>
->>>>>>> e538378 (add neural net controller)
 </div>
 
 3. Adaptive neural-network controller for trajectory tracking (without pose control)
@@ -33,11 +25,7 @@ Example task-space controllers for KUKA LBR iiwa14 robot, including PD controlle
 
 4. Nullspace impedance controller (with static end-effector position)
 <div align="center">
-<<<<<<< HEAD
-  <img src="./examples/nullSpace_impedance.gif" height=200><img src="./examples/nullSpace_impedance.png" height=200>
-=======
   <img src="./examples/nullSpace_impedance.gif" height=300><img src="./examples/nullSpace_impedance.png" height=300>
->>>>>>> e538378 (add neural net controller)
 </div>
 
 ## References
