@@ -90,6 +90,7 @@ DX = []; X = [];	% desired cartesian position and real cartesian position
 U = [];				% joint torque
 T = [];				% time elapse
 ERROR = [];			% cartesian position error
+JERROR = [];		% joint-space configuration error
 PERTURB = [];		% perturbations
 
 %% PD CONTROLLER
@@ -197,6 +198,7 @@ while ((vrep.simxGetConnectionId(clientID) ~= -1) && (t<3.2))    % vrep connecti
 	U = [U; tau']; Q = [Q; q']; QDOT = [QDOT; qdot']; 
 	PERTURB = [PERTURB; tau_e'];
     ERROR = [ERROR; (dx-x)'];
+	JERROR = [JERROR; (nullspace_q_desired - q)'];
 	disptime = sprintf('Simulation Time: %f s', t);
     disp(disptime);
     
@@ -219,15 +221,17 @@ xlabel('Time Elapsed[s]');
 ylabel('Cartesian Error[m]');
 legend('X-axis', 'Y-axis', 'Z-axis');
 title({'End-Effector Position Error'; 'of Nullspace Impedance Controller'});
-savefig('results\nullSpace_imped_cartpos_error.fig');
+savefig('results\3dof\nullSpace_imped_cartpos_error.fig');
 
 plotJointFigures(2, T, PERTURB, 'Joint-space External Perturbation', 'Torque[Nm]')
-savefig('results\nullSpace_imped_joint_perturb.fig');
+savefig('results\3dof\nullSpace_imped_joint_perturb.fig');
 plotJointFigures(3, T, U, "Joint Torque of Nullspace Impedance Controller", 'Torque[Nm]')
-savefig('results\nullSpace_imped_joint_torque.fig');
+savefig('results\3dof\nullSpace_imped_joint_torque.fig');
 plotJointFigures(4, T, Q, "Joint Configuration of Nullspace Impedance Controller", 'Angle[rad]')
-savefig('results\nullSpace_imped_joint_config.fig');
+savefig('results\3dof\nullSpace_imped_joint_config.fig');
 plotJointFigures(5, T, QDOT, "Joint Velocity of Nullspace Impedance Controller", 'Velocity[rad/s]')
-savefig('results\nullSpace_imped_joint_vel.fig');
+savefig('results\3dof\nullSpace_imped_joint_vel.fig');
+plotJointFigures(6, T, JERROR, "Joint Error of Nullspace Impedance Controller", 'Angle[rad]')
+savefig('results\3dof\nullSpace_imped_joint_error.fig');
 
 rmpath('..\..\libs')
